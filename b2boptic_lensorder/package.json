@@ -1,0 +1,11 @@
+{
+  "name": "b2boptic_lensorder",
+  "version": "0.0.9",
+  "description": "b2bOptic Lens Order Interface",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ranjith Venkatesh",
+  "license": "ISC"
+}
