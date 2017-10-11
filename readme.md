@@ -1,5 +1,8 @@
 # b2bOptic Lens Order Interface
 
+[travis-build]: https://travis-ci.org/mossandlichens/b2boptic_lensorder.svg?branch=master
+![travis-build]
+
 ## Install:
 npm install b2boptic_lensorder
 
