@@ -14,9 +14,9 @@ var b2bOptic_lensorder_json_object = b2bOptic_lensorder.b2bOptic();
 * _deserialize_ - To convert xml to javascript object  
 * _serialize_ - To convert javascript object to xml
 
+## Github (Code and Issues):
+[b2boptic_lensorder](https://github.com/mossandlichens/b2boptic_lensorder)
+
 ## Status:
 Beta
-
-## Github (Code and Issues):
-[b2bOptic](https://github.com/mossandlichens/b2bOptic)
 
