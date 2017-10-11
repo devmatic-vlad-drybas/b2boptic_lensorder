@@ -5,10 +5,8 @@ npm install b2boptic_lensorder
 
 ## Usage:
 var b2bOptic_lensorder = require('b2boptic_lensorder');  
-var b2bOptic_lensorder_json_object = b2bOptic_lensorder.b2bOptic();
-
-## Next release:
-* _validate_ - To check if input xml is schema conform
+var lensOrderObject = b2bOptic_lensorder.b2bOptic();
+var lensOrderValid = b2boptic_lensorder.validate(xmlString);
 
 ## Future releases:
 * _deserialize_ - To convert xml to javascript object  
@@ -18,7 +16,9 @@ var b2bOptic_lensorder_json_object = b2bOptic_lensorder.b2bOptic();
 [b2boptic_lensorder](https://github.com/mossandlichens/b2boptic_lensorder)
 
 ## Libraries
-[xsd2json](https://github.com/fnogatz/xsd2json) - for generating json schema from xml schema 
+[xsd2json](https://www.npmjs.com/package/xsd2json) - for generating json schema from xml schema  
+[xsd2json](https://www.npmjs.com/package/libxmljs) - for validating xml against xml schema    
+[mocha](https://www.npmjs.com/package/mocha) - for unit testing functions
 
 ## Status:
 Beta

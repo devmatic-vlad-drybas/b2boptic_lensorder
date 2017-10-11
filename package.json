@@ -1,11 +1,14 @@
 {
   "name": "b2boptic_lensorder",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "b2bOptic Lens Order Interface",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
   },
   "author": "Ranjith Venkatesh",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "libxmljs": "^0.18.7"
+  }
 }

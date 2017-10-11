@@ -12,9 +12,9 @@ exports.validate = function(xml) {
     
     var libxmljs = require('libxmljs');
     
-    var xsdDoc = x.parseXmlString(b2boptic_lensorder_v1_6_3_schema);
+    var xsdDoc = libxmljs.parseXmlString(b2boptic_lensorder_v1_6_3_schema);
     
-    var xmlDoc = x.parseXmlString(xml);
+    var xmlDoc = libxmljs.parseXmlString(xml);
     
     return xmlDoc.validate(xsdDoc);
 }
