@@ -17,7 +17,6 @@ var lensOrderValid = b2boptic_lensorder.validate(xmlString);
 
 ## Libraries
 [xsd2json](https://www.npmjs.com/package/xsd2json) - for generating json schema from xml schema  
-[xsd2json](https://www.npmjs.com/package/libxmljs) - for validating xml against xml schema    
 [mocha](https://www.npmjs.com/package/mocha) - for unit testing functions
 
 ## Status:

@@ -1,6 +1,6 @@
 {
   "name": "b2boptic_lensorder",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "b2bOptic Lens Order Interface",
   "main": "index.js",
   "scripts": {
