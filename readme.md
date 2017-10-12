@@ -3,6 +3,8 @@
 [travis-build]: https://travis-ci.org/mossandlichens/b2boptic_lensorder.svg?branch=master
 ![travis-build]
 
+[![Coverage Status](https://coveralls.io/repos/github/mossandlichens/b2boptic_lensorder/badge.svg?branch=master)](https://coveralls.io/github/mossandlichens/b2boptic_lensorder?branch=master)
+
 ## Install:
 npm install b2boptic_lensorder
 
