@@ -7,7 +7,7 @@
     "order",
     "optics"
   ],
-  "version": "0.0.16",
+  "version": "0.0.17",
   "description": "b2bOptic Lens Order Interface",
   "main": "index.js",
   "scripts": {
