@@ -1,3 +1,5 @@
+"use strict";
+
 var assert = require('assert');
 
 var b2boptic_lensorder = require('../index.js');

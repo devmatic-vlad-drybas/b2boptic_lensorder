@@ -8,11 +8,11 @@ npm install b2boptic_lensorder
 
 ## Usage:
 var b2bOptic_lensorder = require('b2boptic_lensorder');  
-var lensOrderObject = b2bOptic_lensorder.b2bOptic();  
+var emptyLensOrderObject = b2bOptic_lensorder.b2bOptic();  
 var lensOrderValid = b2boptic_lensorder.validate(xmlString);
+var lensOrderObject = b2boptic_lensorder.deserialize(xmlString);
 
 ## Future releases:
-* _deserialize_ - To convert xml to javascript object  
 * _serialize_ - To convert javascript object to xml
 
 ## Github (Code and Issues):
@@ -24,4 +24,3 @@ var lensOrderValid = b2boptic_lensorder.validate(xmlString);
 
 ## Status:
 Beta
-
