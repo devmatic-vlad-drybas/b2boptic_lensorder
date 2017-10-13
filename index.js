@@ -19,9 +19,11 @@ exports.validate = function(xml) {
     return xmlDoc.validate(xsdDoc);
 };
 
-var parseString = require('xml2js').parseString;
+var xml2js = require('xml2js');
 
 exports.deserialize = function(xml) {
+
+    var parseString = xml2js.parseString;
     
     var xmlValid = this.validate(xml);
 
@@ -37,5 +39,23 @@ exports.deserialize = function(xml) {
         return jsonObject;
     } else {
         throw Error("Xml not valid as per schema.");
+    }
+};
+
+exports.serialize = function(b2bOpticObject) {
+    
+    var builder = new xml2js.Builder();
+
+    var b2bOpticXml = builder.buildObject(b2bOpticObject);
+
+    var xmlValid = this.validate(b2bOpticXml);
+
+    if(xmlValid)
+    {
+        return b2bOpticXml;
+    }
+    else
+    {
+        return "Invalid b2bOptic object";
     }
 };
