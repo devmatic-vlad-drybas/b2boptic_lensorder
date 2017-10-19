@@ -1,18 +1,18 @@
 "use strict";
 
 exports.b2bOptic = function() {    
-    var fs = require('fs');
+    var fse = require('fs-extra');
     var path = require('path');
     var pathToSchemaJson = path.join(__dirname, "b2boptic_lensorder_v1.6.3.json");
-    var b2boptic_lensorder_v1_6_3_json = fs.readFileSync(pathToSchemaJson);
+    var b2boptic_lensorder_v1_6_3_json = fse.readFileSync(pathToSchemaJson);
     return JSON.parse(b2boptic_lensorder_v1_6_3_json);
 };
 
 exports.validate = function(xml) {    
-    var fs = require('fs');
+    var fse = require('fs-extra');
     var path = require('path');
     var pathToSchema = path.join(__dirname, "b2boptic_lensorder_v1.6.3.xsd");
-    var b2boptic_lensorder_v1_6_3_schema = fs.readFileSync(pathToSchema);    
+    var b2boptic_lensorder_v1_6_3_schema = fse.readFileSync(pathToSchema);    
     var libxmljs = require('libxmljs');
     var xsdDoc = libxmljs.parseXmlString(b2boptic_lensorder_v1_6_3_schema);    
     var xmlDoc = libxmljs.parseXmlString(xml);    
