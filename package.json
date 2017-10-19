@@ -7,7 +7,7 @@
     "order",
     "optics"
   ],
-  "version": "0.0.19",
+  "version": "0.0.21",
   "description": "b2bOptic Lens Order Interface",
   "main": "index.js",
   "scripts": {
@@ -24,13 +24,12 @@
     "url": "https://github.com/mossandlichens/b2boptic_lensorder/issues",
     "email": "support@mossandlichens.com"
   },
-  "dependencies": {
+  "dependencies":{
     "libxmljs": "^0.18.7",
-    "remove-whitespace": "^1.1.0",
     "xml2js": "^0.4.19"
   },
   "devDependencies": {
     "mocha": "^4.0.1",
-    "nyc": "^11.2.1"
+    "nyc": "^11.2.1"    
   }
 }
