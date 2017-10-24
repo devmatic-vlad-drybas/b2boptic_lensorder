@@ -8,15 +8,29 @@ exports.b2bOptic = function() {
     return JSON.parse(b2boptic_lensorder_v1_6_3_json);
 };
 
-exports.validate = function(xml) {    
+exports.validate = function(xmlValue) {    
     var fse = require('fs-extra');
     var path = require('path');
     var pathToSchema = path.join(__dirname, "b2boptic_lensorder_v1.6.3.xsd");
     var b2boptic_lensorder_v1_6_3_schema = fse.readFileSync(pathToSchema);    
+    
     var libxmljs = require('libxmljs');
     var xsdDoc = libxmljs.parseXmlString(b2boptic_lensorder_v1_6_3_schema);    
-    var xmlDoc = libxmljs.parseXmlString(xml);    
+    var xmlDoc = libxmljs.parseXmlString(xmlValue);    
     return xmlDoc.validate(xsdDoc);
+    /*
+    var xmllintObject = require('xmllint');
+    try {
+        var validationOutput = xmllintObject.validateXML({ xml: xmlValue, schema: b2boptic_lensorder_v1_6_3_schema});
+        if (!validationOutput.errors) {
+            return true;
+        } else {
+            return false;
+        }        
+    } catch (error) {
+        return false;
+    } 
+    */   
 };
 
 exports.deserialize = function(xml) {
