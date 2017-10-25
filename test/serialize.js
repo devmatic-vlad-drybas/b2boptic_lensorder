@@ -4,9 +4,9 @@ var assert = require('assert');
 
 var b2boptic_lensorder = require('../index.js');
 
-var common = require('./common');
+var files = require('../helpers/files');
 
-var xmlValid = common.loadValidXml();
+var xmlValid = files.loadValidXml();
 var parseString = require('xml2js').parseString;
 var jsonValidObject = null;
 parseString(xmlValid, function(err,result){

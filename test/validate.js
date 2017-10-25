@@ -4,12 +4,12 @@ var assert = require('assert');
 
 var b2boptic_lensorder = require('../index.js');
 
-var common = require('./common');
+var files = require('../helpers/files');
 
-var xmlValid = common.loadValidXml();
+var xmlValid = files.loadValidXml();
 var resultValid = b2boptic_lensorder.validate(xmlValid);
 
-var xmlInvalid = common.loadInvalidXml();
+var xmlInvalid = files.loadInvalidXml();
 var resultInvalid = b2boptic_lensorder.validate(xmlInvalid);
 
 describe('b2bOptic', function() {  
