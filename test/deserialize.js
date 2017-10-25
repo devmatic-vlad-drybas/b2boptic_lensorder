@@ -6,20 +6,31 @@ var b2boptic_lensorder = require('../index.js');
 
 var files = require('../helpers/files');
 
-var xmlValid = files.loadValidXml();
-var parseString = require('xml2js').parseString;
-var jsonValidObject = null;
-parseString(xmlValid, function(err,result){
+files.loadValidXml(function(err, data){
   if(err) {
-      throw err;
+    throw err;
   }
-  jsonValidObject = result;
-});
 
-var jsonTestObject = b2boptic_lensorder.deserialize(xmlValid);
+  var parseString = require('xml2js').parseString;
+  var jsonValidObject = null;
+  parseString(data, function(err,result){
+    if(err) {
+        throw err;
+    }
+    jsonValidObject = result;
+  });
+  
+  b2boptic_lensorder.deserialize(data, function(err, data){
 
-describe('b2bOptic', function() {  
-  it('The xml should match with the deserialized and stringified version', function() {
-    assert.deepEqual(jsonValidObject, jsonTestObject);
-  }); 
+    if(err){
+      throw err;
+    }
+
+    describe('deserialize', function() {  
+      it('The xml should match with the deserialized and stringified version', function() {
+        assert.deepEqual(jsonValidObject, data);
+      }); 
+    });
+  });  
+
 });

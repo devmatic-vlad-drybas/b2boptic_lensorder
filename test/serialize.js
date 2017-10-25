@@ -6,27 +6,44 @@ var b2boptic_lensorder = require('../index.js');
 
 var files = require('../helpers/files');
 
-var xmlValid = files.loadValidXml();
-var parseString = require('xml2js').parseString;
-var jsonValidObject = null;
-parseString(xmlValid, function(err,result){
+files.loadValidXml(function(err, data){
+
   if(err) {
-      throw err;
+    throw err;
   }
-  jsonValidObject = result;
+
+  var parseString = require('xml2js').parseString;
+  var jsonValidObject = null;
+  parseString(data, function(err,result){
+    if(err) {
+        throw err;
+    }
+    jsonValidObject = result;
+  });
+  
+  b2boptic_lensorder.serialize(jsonValidObject, function(err, data){
+    if(err) {
+      throw err;
+    }
+    var xmlTestString = data;
+    var jsonTestObject = null;
+    parseString(xmlTestString, function(err,result){
+      if(err) {
+          throw err;
+      }
+      jsonTestObject = result;
+    });
+    
+    describe('serialize', function() {  
+      it('Original and serialized objects should match', function() {
+        assert.deepEqual(jsonValidObject, jsonTestObject);
+      }); 
+    });
+
+
+  });
+
+  
+
 });
 
-var xmlTestString = b2boptic_lensorder.serialize(jsonValidObject);
-var jsonTestObject = null;
-parseString(xmlTestString, function(err,result){
-  if(err) {
-      throw err;
-  }
-  jsonTestObject = result;
-});
-
-describe('b2bOptic', function() {  
-  it('Original and serialized objects should match', function() {
-    assert.deepEqual(jsonValidObject, jsonTestObject);
-  }); 
-});

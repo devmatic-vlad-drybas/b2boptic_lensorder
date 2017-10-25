@@ -1,29 +1,53 @@
 "use strict";
 
-exports.loadValidXml = function(){
+exports.loadValidXml = function(callback){
     var fs = require('fs');
     var path = require('path');
     var pathToValidXml = path.join(__dirname, "../data/valid.xml");
-    return fs.readFileSync(pathToValidXml);   
+    fs.readFile(pathToValidXml, function(err, data){
+        if(err){
+            throw callback(err);
+        } else {
+            return callback(null, data);
+        }        
+    });
 };
 
-exports.loadInvalidXml = function(){
+exports.loadInvalidXml = function(callback){
     var fs = require('fs');
     var path = require('path');
     var pathToValidXml = path.join(__dirname, "../data/invalid.xml");
-    return fs.readFileSync(pathToValidXml);   
+    fs.readFile(pathToValidXml, function(err, data){
+        if(err){
+            throw callback(err);
+        } else {
+            return callback(null, data);
+        }        
+    });
 };
 
-exports.loadSchemaJson = function(){
+exports.loadSchemaJson = function(callback){
     var fs = require('fs');
     var path = require('path');
     var pathToSchemaJson = path.join(__dirname, "../data/b2boptic_lensorder_v1.6.3.json");
-    return fs.readFileSync(pathToSchemaJson);
+    fs.readFile(pathToSchemaJson, function(err, data){
+        if(err){
+            throw callback(err);
+        } else {
+            return callback(null, data);
+        }        
+    });
 };
 
-exports.loadSchema = function(){
+exports.loadSchema = function(callback){
     var fs = require('fs');
     var path = require('path');
     var pathToSchemaJson = path.join(__dirname, "../data/b2boptic_lensorder_v1.6.3.xsd");
-    return fs.readFileSync(pathToSchemaJson);
+    fs.readFile(pathToSchemaJson, function(err, data){
+        if(err){
+            throw callback(err);
+        } else {
+            return callback(null, data);
+        }        
+    });
 };
