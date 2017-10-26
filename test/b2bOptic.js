@@ -8,10 +8,7 @@ var b2boptic_lensorder = require('../index.js');
 
 describe('b2bOptic', function() {  
   it('The object string notation should match', function() {
-    files.loadSchema(function(err, dataSchema){
-      if(err){
-        throw err;
-      }
+    var dataSchema = files.loadSchema();
 
       b2boptic_lensorder.b2bOptic(function(err, data){
         if(err){
@@ -22,5 +19,4 @@ describe('b2bOptic', function() {
 
     });
     
-  });  
 });

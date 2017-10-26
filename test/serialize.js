@@ -9,15 +9,11 @@ var files = require('../helpers/files');
 describe('serialize', function() {  
   it('Original and serialized objects should match', function() {
 
-files.loadValidXml(function(err, data){
-
-  if(err) {
-    throw err;
-  }
+  var validXml = files.loadValidXml();
 
   var parseString = require('xml2js').parseString;
   var jsonValidObject = null;
-  parseString(data, function(err,result){
+  parseString(validXml, function(err,result){
     if(err) {
         throw err;
     }
@@ -47,5 +43,4 @@ files.loadValidXml(function(err, data){
   
 
 });
-}); 
 });

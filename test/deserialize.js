@@ -9,21 +9,18 @@ var files = require('../helpers/files');
 describe('deserialize', function() {  
   it('The xml should match with the deserialized and stringified version', function() {
 
-files.loadValidXml(function(err, data){
-  if(err) {
-    throw err;
-  }
+  var validXml = files.loadValidXml();
 
   var parseString = require('xml2js').parseString;
   var jsonValidObject = null;
-  parseString(data, function(err,result){
+  parseString(validXml, function(err,result){
     if(err) {
         throw err;
     }
     jsonValidObject = result;
   });
   
-  b2boptic_lensorder.deserialize(data, function(err, data){
+  b2boptic_lensorder.deserialize(validXml, function(err, data){
 
     if(err){
       throw err;
@@ -34,6 +31,5 @@ files.loadValidXml(function(err, data){
      
   });  
 
-});
 }); 
 });

@@ -8,11 +8,10 @@ var files = require('../helpers/files');
 
 describe('invalid', function() {  
   it('The xml should NOT be valid', function() {
-files.loadInvalidXml(function(err, data){
-  if(err){
-    throw err;
-  }else{
-    b2boptic_lensorder.validate(data, function(err, data){
+    
+    var invalidXml = files.loadInvalidXml();
+
+    b2boptic_lensorder.validate(invalidXml, function(err, data){
       if(err){
         throw err;
       }
@@ -21,8 +20,6 @@ files.loadInvalidXml(function(err, data){
         
     });
     
-  }
-});
-});  
+  });  
 });
 
