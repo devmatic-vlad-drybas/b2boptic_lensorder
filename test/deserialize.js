@@ -6,6 +6,9 @@ var b2boptic_lensorder = require('../index.js');
 
 var files = require('../helpers/files');
 
+describe('deserialize', function() {  
+  it('The xml should match with the deserialized and stringified version', function() {
+
 files.loadValidXml(function(err, data){
   if(err) {
     throw err;
@@ -26,11 +29,11 @@ files.loadValidXml(function(err, data){
       throw err;
     }
 
-    describe('deserialize', function() {  
-      it('The xml should match with the deserialized and stringified version', function() {
+    
         assert.deepEqual(jsonValidObject, data);
-      }); 
-    });
+     
   });  
 
+});
+}); 
 });

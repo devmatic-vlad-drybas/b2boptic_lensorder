@@ -6,6 +6,9 @@ var b2boptic_lensorder = require('../index.js');
 
 var files = require('../helpers/files');
 
+describe('serialize', function() {  
+  it('Original and serialized objects should match', function() {
+
 files.loadValidXml(function(err, data){
 
   if(err) {
@@ -34,11 +37,9 @@ files.loadValidXml(function(err, data){
       jsonTestObject = result;
     });
     
-    describe('serialize', function() {  
-      it('Original and serialized objects should match', function() {
+    
         assert.deepEqual(jsonValidObject, jsonTestObject);
-      }); 
-    });
+      
 
 
   });
@@ -46,4 +47,5 @@ files.loadValidXml(function(err, data){
   
 
 });
-
+}); 
+});
